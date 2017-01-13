@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Lawyers.WebApp.Models.BreadcrumbModel>
+<ol class="breadcrumb hidden-xs">
+    @foreach (var b in Model)
+    {
+        <li>
+            @if (b != Model.Last())
+            {
+                <a href="@b.Link">@b.Label</a>
+            }
+            else
+            {
+                @b.Label
+            }
+        </li>
+    }
+</ol>

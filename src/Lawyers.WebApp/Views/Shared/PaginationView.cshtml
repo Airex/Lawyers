@@ -1,0 +1,46 @@
+﻿@model Lawyers.WebApp.Models.PagingViewModel
+@{
+    bool prev = false;
+    bool next = false;
+}
+<nav>
+    <ul class="pagination pagination-sm">
+        @if (Model.Current > 1)
+        {
+            if (Model.Current == 2)
+            {
+                <li><a rel="prev" href="">&laquo;</a></li>
+            }
+            else
+            {
+                <li><a rel="prev" href="@(Model.Current - 1)">&laquo;</a></li>
+            }
+            prev = true;
+        }
+        else
+        {
+            <li class="disabled" ><a> &laquo;</a ></li>
+        }
+        
+        @if (Model.Current != 1)
+        {
+            <li><a href="">1</a></li>
+            <li class="disabled"><a>...</a></li>
+        }
+        <li class="active"><a href="#">@Model.Current></a></li>
+        @if (Model.Current != Model.PagesCount)
+        {
+            <li class="disabled"><a>...</a></li>
+            <li><a href="?page=@(Model.PagesCount)">@Model.PagesCount</a></li>
+        }
+        @if (Model.Current == Model.PagesCount)
+        {
+            <li class="disabled"><a>&raquo;</a></li>
+        }
+        else
+        {
+            <li class=""><a rel="next" href="?page=@(Model.Current+1)">&raquo;</a></li>
+            next = true;
+        }
+    </ul>
+</nav>

@@ -1,0 +1,115 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta type="keywords" content="About" />
+    <meta type="description" content="About" />
+    <style>
+		.map {
+            min-height: 75vh;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+		html {
+            position: relative;
+            min-height: 100%;
+        }
+        body {
+            margin-bottom: 10vh;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            height: 10vh; /*высота футера будет зависеть от высоты экрана*/
+
+        }
+        /* чтобы весь футер заливался */
+        footer .row{
+            background-color: #ffffff;
+        }
+
+        address {
+            margin-bottom: 0px
+        }
+        #lawlist {
+            max-height: 75vh;
+            overflow-y: auto;
+        }
+
+        #advbl {
+    padding-top: 20px;
+    min-height: 80vh;
+        }
+        @media only screen and (max-width: 450px) {
+
+        #lawlist {
+                max-height: none;
+                overflow-y: overlay;
+            }
+         h1 {
+             font-size: 22px;
+         }
+         .navbar-brand {
+    float: left;
+    padding: 10px 10px;
+    font-size: 18px;
+    line-height: 25px;
+    max-height: 50px;
+        }
+    #advbl {
+    padding-top: 5px;
+    min-height: 5vh;
+
+        }
+
+    </style>
+</head>
+<body class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header ">
+                <a class="navbar-brand" href="/">Australian lawyers search servise</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right hidden-xs">
+                <li><a href="/contact-form/index.html">Contacts</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <h1>Terms of use</h1>
+    <p>This site is a school project.</p>
+    <p>Any data placed on it must be to use an under the responsibility of the user.</p>
+    <p>Any information on this site should be checked for correctness before use.</p>
+    <p>All data taken from open sources and is relevant only at the time of their receipt.</p>
+    <p>If any information on this site violates your rights, please inform us via the feedback form.</p>
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB33EFxKG7JauFLCy_6Q9sOmWcBvFlfiJ0"></script>
+    <script type="text/javascript" src="/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/assets/js/custom.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">document.body.onload = initMap;</script>
+
+    <footer class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6"><p>Copyright ©2016</p></div>
+            <div class="col-xs-12 col-md-6"><a href="/termsofuse.html">Terms of use</a></div>
+        </div>
+
+
+    </footer>
+</body>
+</html>

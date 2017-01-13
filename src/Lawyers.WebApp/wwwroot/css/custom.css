@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
+
+/* 
+System styles.
+Must be deleted before production.
+Styles describe the custom dump function. 
+*/
+pre.dump{
+	width: 100%;
+	height: 200px;
+	background-color: #242829;
+	border: 2px solid #FF6600;
+	border-radius: 0;
+	font-family: 'Inconsolata';
+	color: #33FF3A;
+	font-size: 16px;
+	font-weight: 700!important;
+}
+
+pre.dump::-webkit-scrollbar{
+	width: 5px;
+	background-color: #c3c3c3;
+}
+
+pre.dump::-webkit-scrollbar-button{
+	width: 5px;
+	background-color: #232323;
+}
+
+pre.dump::-webkit-scrollbar-thumb{
+	width: 5px;
+	background-color: #242829;
+}
+
+pre.dump span.line, pre.dump span.file{
+	color: white;
+}
+
+pre.dump span.description{
+	color: #FFDD00;
+}
+
+pre.dump span.sep{
+	color: white;
+}
+/* end on the system style */
+
+.pagination{
+	/*position: fixed;*/
+	/*top: 10px;*/
+/*	right: 30px;*/
+	/*z-index: 999;*/
+}
+
+textarea{
+	resize: vertical;
+}

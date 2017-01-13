@@ -1,0 +1,18 @@
+﻿@model Lawyers.WebApp.Models.LawyersPageModel
+
+<div class="col-lg-12">
+    <ul id="lnavlist">
+        @foreach (var l in Model.Lawyers)
+        {
+            <li class="thumbnail">
+                <div class="inpagellist">
+                    <address itemscope itemtype="http://schema.org/LocalBusiness">
+                        <h3 itemprop="name">@l.Name</h3>
+                        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">@l.Address</span><br>
+                        Phone: <span itemprop="telephone">@l.Phone</span>
+                    </address>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,52 @@
+﻿@model Lawyers.WebApp.Models.LawyersPageModel
+
+@*<?php $maps = []; ?>*@
+<h1>@Model.SeoModel.H1</h1>
+<div class="row">
+
+    <div class="col-xs-12 col-sm-4 col-sm-push-4 text-center">
+        <div id="advbl">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- adapt -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9943820082472623"
+                 data-ad-slot="2160235553"
+                 data-ad-format="auto"></ins>
+            <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-sm-push-4 text-center">
+        <h2 class="asstrong">@Model.SeoModel.H1 on map</h2>
+        <div class="map thumbnail" id="map"></div>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-sm-pull-8 text-center">
+        <h2 class="asstrong">List of @Model.SeoModel.H1</h2>
+        <div id="lawlist">
+            @foreach (var l in Model.Lawyers)
+            {
+                <div class="thumbnail">
+                    <div class="caption text-justify">
+                        <address itemscope itemtype="http://schema.org/LocalBusiness">
+                            <h3 itemprop="name">@l.Name</h3>
+                            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">@l.Address</span><br>
+                            Phone: <span itemprop="telephone">@l.Phone</span>
+                        </address>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="hidden-xs col-sm-12">
+        @Model.SeoModel.Block
+    </div>
+</div>
+@{ await Html.RenderPartialAsync("Maps", Model); }
+@*<?php include 'templates/maps.tpl'; ?>*@
