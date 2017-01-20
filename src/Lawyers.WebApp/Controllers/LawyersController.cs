@@ -15,7 +15,10 @@ namespace Lawyers.WebApp.Controllers
 
         public IActionResult Index(string param)
         {
-            var data = _lawyersPageFactory.HandlePage(param);
+            int page = 1;
+            if (Request.Query.ContainsKey("page"))
+                int.TryParse(Request.Query["page"], out page);
+            var data = _lawyersPageFactory.HandlePage(param, page);
             return View(data.ViewName,data.Model);
         }
 

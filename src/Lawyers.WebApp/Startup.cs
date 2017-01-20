@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Lawyers.Contracts;
+using Lawyers.Contracts.Models;
+using Lawyers.Service;
+using Lawyers.WebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -13,7 +17,7 @@ namespace Lawyers.WebApp
     public class Startup
     {
         public Startup(IHostingEnvironment env)
-        {
+        {   
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -27,7 +31,14 @@ namespace Lawyers.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            AutoMapper.Mapper.Initialize(expression => {
+                expression.CreateMap<Lawyer, LawyerModel>();
+            });
+
             services.AddTransient<ILawyersPageFactory,DefaultLageFactory>();
+            services.AddTransient<ILawyersService, LawyerServiceMock>();
+            services.AddTransient<ILookupsService,LookupsesServiceMock>();
             // Add framework services.
             services.AddMvc();
         }

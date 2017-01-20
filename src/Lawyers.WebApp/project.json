@@ -20,7 +20,10 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-    "NETStandard.Library": "1.6.1"
+    "NETStandard.Library": "1.6.1",
+    "Lawyers.Contracts": "1.0.0-*",
+    "AutoMapper": "5.2.0",
+    "Lawyers.Service": "1.0.0-*"
   },
 
   "tools": {
